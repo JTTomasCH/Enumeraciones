@@ -4,7 +4,7 @@ package mundo;
  *
  * @author Tomás Chiriví
  */
-public class Casilleros {
+public class Casilleros <T>{
 
     private Casillero c1;
     private Casillero c2;
@@ -27,13 +27,13 @@ public class Casilleros {
         return -1;
     }
 
-    public Producto despachar(int num) {
+    public T despachar(int num) {
 
         switch (num) {
             case 1:
-                return c1.despachar();
+                return (T) c1.despachar();
             case 2:
-                return c2.despachar();
+                return (T) c2.despachar();
         }
         return null;
     }
@@ -53,5 +53,8 @@ public class Casilleros {
         }
 
     }
+
+}
+
 
 }
