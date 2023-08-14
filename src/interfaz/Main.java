@@ -24,7 +24,7 @@ import mundo.Computador.SistemaOperativo;
  *
  * @author USUARIO
  */
-public class Main {
+public class Main <T> {
 
     private BufferedReader br;
     private Casilleros casilleros;
@@ -277,7 +277,7 @@ public class Main {
         System.out.println("¿Número del casillero?");
         int num = Integer.parseInt(br.readLine());
 
-        Producto producto = casilleros.despachar(num);
+        T producto = (T)casilleros.despachar(num);
 
         if (producto == null) {
             System.out.println("El casillero con número " + num + " no contiene ningún producto o el casillero no existe, revise el estado de los casilleros");
