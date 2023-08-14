@@ -1,55 +1,48 @@
-
 package mundo;
 
 /**
  *
  * @author Tomás Chiriví
  */
-public class Casillero {
+public class Casillero <T> {
 
-	private Producto producto;
+    private T producto;
 
-	public Casillero ()
-	{
-		producto = null;
-	}
+    public Casillero() {
+        producto = null;
+    }
 
-	public boolean agregar(Producto pProducto)
-	{
-		if(producto == null)
-		{
-			producto = pProducto;
-			return true;
-		}
-		return false;
-	}
-
-	public Producto darProducto()
-	{
-		return producto;
-	}
-
-	public Producto despachar()
-	{
-		if(producto==null)
-		{
-			return producto;
-		}
-		
-		Producto nObjeto = producto;
-		producto = null;
-		return nObjeto;
-	}
-
-	
-	public boolean estaDesocupado() {
-		
-		if(producto==null)
-		{
-			return true;
-		}
-		return false;
+    public boolean agregar(T pProducto) {
+        if (producto == null) {
+            producto = pProducto;
+            return true;
         }
+        return false;
+    }
+
+    public T darProducto() {
+        return producto;
+    }
+
+    public T despachar() {
+        if (producto == null) {
+            return producto;
+        }
+
+        T nObjeto = producto;
+        producto = null;
+        return nObjeto;
+    }
+
+    public boolean estaDesocupado() {
+
+        if (producto == null) {
+            return true;
+        }
+        return false;
+    }
+
+}
 
     
 }
